@@ -1,0 +1,61 @@
+---
+title: "intro"
+author: '20031'
+date: "2020/12/14"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
+
+__StatComp20031__ is a simple R package to calculate ordinal number correlation, there are three common methods, Spearman correlation, Kendall correlation and Gamma correlation. Three functions are considered, namely, corS(calculating Spearman correlation), corK(calculating Kendall correlation) and corG(calculating Gamma correlation.
+
+## corS and corK
+
+The source R code for corS is as follows:
+```{r,eval=FALSE}
+corS <- function(x, y)
+{
+  n <- length(x)
+  r <- 1 - 6 * sum((x - y)^2)/(n^3 - n)
+  return r
+}
+```
+
+The source R code for corK is as follows:
+```{r,eval=FALSE}
+corK <- function(x, y)
+{
+  n <- length(x)
+  r <- 0
+  for (j in 2:n) {
+    for (i in 1:(j-1)) {
+      r <- r + sgn((x[i] - x[j]) * (y[i] - y[j]))
+    }
+  }
+  return 2 * r/(n * (n - 1))
+}
+```
+
+The source R code for corG is as follows:
+```{r,eval=FALSE}
+corG <- function(d) {
+  r <- nrow(d)
+  c <- ncol(d)
+  x <- y <- 0
+  for (i in 1 : (r-1)) {
+    for (j in 1 : (c-1)) {
+      x <- x + d[i,j] * sum(d[c((i+1) : r),c((j+1) : c)])
+    }
+  }
+  for (i in 1 : (r-1)) {
+    for (j in 2:c) {
+      y <- y + d[i,j] * sum(d[c((i+1) : r),c(1 : (j-1))])
+    }
+  }
+  (x-y) / (x+y)
+}
+```
