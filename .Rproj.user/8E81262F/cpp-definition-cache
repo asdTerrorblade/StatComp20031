@@ -1,0 +1,17 @@
+[
+    {
+        "file": "C:/Users/liuwei/Desktop/StatComp20031/src/rwMCpp.cpp",
+        "file_last_write": 1608019883.0,
+        "definitions": [
+            {
+                "usr": "c:@F@rwMCpp#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rwMCpp(double, double, int)",
+                "file": "C:/Users/liuwei/Desktop/StatComp20031/src/rwMCpp.cpp",
+                "line": 17,
+                "column": 15
+            }
+        ]
+    }
+]

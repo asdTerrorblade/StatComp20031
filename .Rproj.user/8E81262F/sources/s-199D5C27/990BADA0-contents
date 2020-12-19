@@ -1,0 +1,16 @@
+Package: StatComp20031
+Type: Package
+Title: the final homework for 'Statistical Computing' course
+Version: 1.0
+Date: 2020-12-15
+Author: 20031
+Maintainer: 20031 <3256829518@qq.com>
+Description: Calculating Spearman, Kendall, Gamma correlation function and homework. 
+License: GPL (>= 2)
+Imports: Rcpp (>= 0.12.16), microbenchmark, knitr, rmarkdown, Ball, DAAG, RANN, boot, bootstrap, energy, mvtnorm, nloptr
+LinkingTo: Rcpp
+RoxygenNote: 7.1.1
+Encoding: UTF-8
+VignetteBuilder: knitr
+URL: https://github.com/asdTerrorblade/StatComp20031
+BugReports: https://github.com/asdTerrorblade/StatComp20031/issues
