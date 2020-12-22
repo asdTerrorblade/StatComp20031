@@ -21,7 +21,7 @@ corS <- function(x, y)
 {
   n <- length(x)
   r <- 1 - 6 * sum((x - y)^2)/(n^3 - n)
-  return r
+  r
 }
 ```
 
@@ -36,7 +36,7 @@ corK <- function(x, y)
       r <- r + sgn((x[i] - x[j]) * (y[i] - y[j]))
     }
   }
-  return 2 * r/(n * (n - 1))
+  2 * r/(n * (n - 1))
 }
 ```
 
